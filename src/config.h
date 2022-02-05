@@ -24,8 +24,8 @@ RTC_DS1307 rtc;
 Stepper* steppers[3]{
         &day_stepper,
         &dow_stepper,
-        &month_stepper
-};
+        &month_stepper};
+
 int8_t output_pins[] = {DOW_PIN1, DOW_PIN2, DAY_PIN1, DAY_PIN2, MONTH_PIN1, MONTH_PIN2};
 
 #define DAY_GEAR_RATIO empt
@@ -43,18 +43,18 @@ uint16_t previous_day;
 uint16_t previous_month;
 uint32_t previous_time;
 
-
 byte EEPROM_Day;
 byte EEPROM_Month;
 byte EEMEM EEPROM_Day_addr;
 byte EEMEM EEPROM_Month_addr;
 
 
+// TODO: Високосный год чеееек
 const PROGMEM uint8_t days_in_month[]  = {
         0, 31, 28, 31, 30, 31, 30,
         31, 31, 30, 31, 30, 31};
 const PROGMEM char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday",
                                   "Thursday", "Friday", "Saturday"};
-// TODO: Високосный год чеееек
+
 
 #endif //AUTOCALENDAR_CONFIG_H

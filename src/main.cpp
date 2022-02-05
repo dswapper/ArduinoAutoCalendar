@@ -7,7 +7,7 @@
 #include <Arduino.h>
 #include <EEPROM.h>
 #include <avr/eeprom.h>
-// TODO: RTC Alarms на 12:00 (я гений)
+// TODO: RTC Alarms на 12:00 (я гeй или гейний?)
 #include <RTClib.h>
 
 #include "config.h"
@@ -70,9 +70,17 @@ void configure_menu(){
     String input_string;
     if (config_flag) {
         input_string = Serial.readString();
-        if (input_string == "exit") {
+
+        if (input_string == "exit"){
             config_flag = false;
+            Serial.println(config_menu_exit_msg);
         }
+        if (input_string == "reset"){
+            // TODO: сброс шаговых
+            previous_month = 1;
+            previous_day = 1;
+        }
+        if (input_string)
     }
 }
 
