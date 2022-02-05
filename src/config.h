@@ -44,8 +44,14 @@ uint16_t previous_month;
 uint32_t previous_time;
 
 
-const PROGMEM int days_in_month[]  = {
-        31, 28, 31, 30, 31, 30,
+byte EEPROM_Day;
+byte EEPROM_Month;
+byte EEMEM EEPROM_Day_addr;
+byte EEMEM EEPROM_Month_addr;
+
+
+const PROGMEM uint8_t days_in_month[]  = {
+        0, 31, 28, 31, 30, 31, 30,
         31, 31, 30, 31, 30, 31};
 const PROGMEM char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday",
                                   "Thursday", "Friday", "Saturday"};
